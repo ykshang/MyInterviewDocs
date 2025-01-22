@@ -204,7 +204,7 @@ module.exports = [{
     path: '/vue/27'
   }]
 }, {
-  title: '算法',
+  title: '算法、设计模式',
   path: '/Algorithm/',
   children: [{
     title: '1、发布/订阅模式',
