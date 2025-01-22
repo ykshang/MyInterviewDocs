@@ -53,3 +53,12 @@
 h4 {
   font-size: 1.15rem;
 }
+.no-line-numbers.line-numbers-mode::after {
+  display: none;
+}
+.no-line-numbers>.line-numbers-wrapper {
+  display: none;
+}
+.no-line-numbers>pre {
+  padding: 1.25rem 1.5rem !important;
+}
