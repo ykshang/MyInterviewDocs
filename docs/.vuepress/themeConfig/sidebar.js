@@ -287,7 +287,7 @@ module.exports = [{
     title: 'Node.js',
     path: '/nodejs/nodejs/',
     children: [{
-      title: '1、Node.js',
+      title: '1、Node.js简介',
       path: '/nodejs/nodejs/1',
     }, {
       title: '2、常用的命令',
