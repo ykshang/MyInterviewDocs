@@ -284,22 +284,26 @@ module.exports = [{
   title: 'Node.js',
   path: '/nodejs/',
   children: [{
-    title: '1、Node.js',
-    path: '/nodejs/1'
-  }, {
-    title: '2、常用的命令',
-    path: '/nodejs/2'
-  }, {
-    title: '3、Node.js 和 浏览器之间的区别',
-    path: '/nodejs/3'
-  }, {
-    title: '4、NPM 包管理器',
-    path: '/nodejs/4'
-  }, {
-    title: '5、NPM、PNPM、Yarn 的对比',
-    path: '/nodejs/5'
-  }, {
-    title: '6、软链接和硬链接',
-    path: '/nodejs/6'
+    title: 'Node.js',
+    path: '/nodejs/nodejs/',
+    children: [{
+      title: '1、Node.js',
+      path: '/nodejs/1',
+    }, {
+      title: '2、常用的命令',
+      path: '/nodejs/nodejs/2'
+    }, {
+      title: '3、Node.js 和 浏览器之间的区别',
+      path: '/nodejs/nodejs/3'
+    }, {
+      title: '4、NPM 包管理器',
+      path: '/nodejs/nodejs/4'
+    }, {
+      title: '5、NPM、PNPM、Yarn 的对比',
+      path: '/nodejs/nodejs/5'
+    }, {
+      title: '6、软链接和硬链接',
+      path: '/nodejs/nodejs/6'
+    }]
   }]
 }]
