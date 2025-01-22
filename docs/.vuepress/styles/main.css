@@ -37,6 +37,11 @@
   margin: auto 2px;
   padding: 0 4px;
 }
+
+.theme-default-content>.custom-block>.custom-block-title {
+  font-size: 1.15rem;
+  margin-top: 0.6rem;
+}
 .theme-default-content>blockquote {
   border-left: 0.3rem solid #42b983;
   background: #f5f5f5;
