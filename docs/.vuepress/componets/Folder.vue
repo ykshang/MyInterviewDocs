@@ -1,6 +1,7 @@
 <template>
   <span class="self-folder">
-    <span class="fa fa-folder self-icon"></span>
+    <span class="fa fa-folder self-icon1"></span>
+    <span class="fa fa-folder-open self-icon2"></span>
     <span class="self-path">{{ path }}</span>
   </span>
 </template>
@@ -28,7 +29,17 @@ export default {
 .self-folder:hover>.self-path {
   color: #a98b05;
 }
-.self-icon {
+.self-icon2 {
+display: none;
+}
+.self-folder:hover>.self-icon2 {
+  display: inline-block;
+}
+.self-folder:hover>.self-icon1 {
+  display: none;
+}
+.self-icon1, 
+.self-icon2 {
   color: #ffb829;
   font-size: 1.1rem;
   margin-right: 3px;
