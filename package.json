@@ -29,6 +29,7 @@
   "dependencies": {
     "async-validator": "^1.11.5",
     "element-ui": "^2.14.1",
+    "font-awesome": "^4.7.0",
     "vuepress": "^1.7.1",
     "vuepress-plugin-gotop-plus": "^1.0.4",
     "vuepress-plugin-helper-live2d": "^1.0.2",

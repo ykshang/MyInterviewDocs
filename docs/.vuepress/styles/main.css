@@ -1,3 +1,15 @@
+/* 引入font-awsome样式*/
+[class^="el-icon-fa"],
+[class*=" el-icon-fa"] {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome !important;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 修改code样式*/
 .theme-default-content>p>code,
 .theme-default-content>h2>code,
 .theme-default-content>ul>li>code,
@@ -22,12 +34,15 @@
   color: #ff561b !important;
   font-weight: bold;
   font-size: 0.9rem;
-  padding: 0.13rem 0.4rem;
+  padding: 0.1rem 0.4rem;
+  margin: 0 4px;
 }
-h4>code{
+
+h4>code {
   background-color: #ffeee8 !important;
-  color: #ff561b !important; 
+  color: #ff561b !important;
 }
+
 .theme-default-content>div>p>code {
   font-weight: bold;
 }
@@ -45,23 +60,29 @@ h4>code{
   font-size: 1.15rem;
   margin-top: 0.6rem;
 }
+
 .theme-default-content>blockquote {
   border-left: 0.3rem solid #42b983;
   background: #f5f5f5;
   color: #444;
 }
+
 .theme-default-content>blockquote>p {
   padding-right: 1rem;
 }
+
 h4 {
   font-size: 1.15rem;
 }
+
 .no-line-numbers.line-numbers-mode::after {
   display: none;
 }
+
 .no-line-numbers>.line-numbers-wrapper {
   display: none;
 }
+
 .no-line-numbers>pre {
   padding: 1.25rem 1.5rem !important;
 }
