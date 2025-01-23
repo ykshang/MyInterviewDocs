@@ -42,7 +42,7 @@ display: none;
 .self-icon2 {
   color: #ffb829;
   font-size: 1.1rem;
-  margin-right: 3px;
+  width: 1.3rem;
 }
 .self-path {
   color: #5c4b02;
