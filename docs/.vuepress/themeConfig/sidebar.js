@@ -290,20 +290,17 @@ module.exports = [{
       title: '1、Node.js简介',
       path: '/nodejs/nodejs/1',
     }, {
-      title: '2、常用的命令',
+      title: '2、Node.js 和 浏览器之间的区别',
       path: '/nodejs/nodejs/2'
     }, {
-      title: '3、Node.js 和 浏览器之间的区别',
+      title: '3、NPM 包管理器',
       path: '/nodejs/nodejs/3'
     }, {
-      title: '4、NPM 包管理器',
+      title: '4、NPM、PNPM、Yarn 的对比',
       path: '/nodejs/nodejs/4'
     }, {
-      title: '5、NPM、PNPM、Yarn 的对比',
+      title: '5、软链接和硬链接',
       path: '/nodejs/nodejs/5'
-    }, {
-      title: '6、软链接和硬链接',
-      path: '/nodejs/nodejs/6'
     }]
   }]
 }]
