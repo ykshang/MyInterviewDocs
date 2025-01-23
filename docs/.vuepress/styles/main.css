@@ -28,7 +28,8 @@
   padding: 0.1rem 0.4rem;
   margin: 0 4px;
 }
-
+/*重置标题里的代码段*/
+h3>code,
 h4>code {
   background-color: #ffeee8 !important;
   color: #ff561b !important;
