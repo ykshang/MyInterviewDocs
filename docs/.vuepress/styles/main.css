@@ -1,14 +1,4 @@
 /* 引入font-awsome样式*/
-[class^="fa"],
-[class*=" fa"] {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome !important;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* 修改code样式*/
 .theme-default-content>p>code,
 .theme-default-content>h2>code,
