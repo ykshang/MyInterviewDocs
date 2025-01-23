@@ -77,6 +77,7 @@ h4 {
 .no-line-numbers>pre {
   padding: 1.25rem 1.5rem !important;
 }
+
 .no-line-numbers.mini>pre {
   padding: 0.6rem 1.1rem !important;
 }
