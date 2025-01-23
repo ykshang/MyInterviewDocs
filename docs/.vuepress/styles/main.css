@@ -1,6 +1,6 @@
 /* 引入font-awsome样式*/
-[class^="el-icon-fa"],
-[class*=" el-icon-fa"] {
+[class^="fa"],
+[class*=" fa"] {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome !important;
   font-size: inherit;
