@@ -301,6 +301,9 @@ module.exports = [{
     }, {
       title: '5、软链接和硬链接',
       path: '/nodejs/nodejs/5'
+    }, {
+      title: '6、fs模块',
+      path: '/nodejs/nodejs/6'
     }]
   }]
 }]
