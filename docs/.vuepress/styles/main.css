@@ -15,6 +15,7 @@
 .theme-default-content>ol>li>strong>code,
 .theme-default-content>table>tbody>tr>td>code,
 .theme-default-content>.custom-block.tip>p>code,
+.theme-default-content>ul>li>.custom-block.tip>p>code,
 .theme-default-content>.custom-block.tip>ol>li>code,
 .theme-default-content>.custom-block.tip>ol>li>code,
 .theme-default-content>.custom-block.danger>p>code,
