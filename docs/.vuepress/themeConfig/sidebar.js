@@ -307,6 +307,9 @@ module.exports = [{
     }, {
       title: '7、内置模块 path',
       path: '/nodejs/nodejs/7'
+    }, {
+      title: '8、内置模块 Buffer',
+      path: '/nodejs/nodejs/8'
     }]
   }]
 }]
