@@ -1,6 +1,7 @@
 /* 引入font-awsome样式*/
 /* 修改code样式*/
 .theme-default-content>p>code,
+.theme-default-content>p>strong>code,
 .theme-default-content>h2>code,
 .theme-default-content>ul>li>code,
 .theme-default-content>ul>li>ul>li>code,
