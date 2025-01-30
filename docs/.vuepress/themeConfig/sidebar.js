@@ -322,6 +322,9 @@ let sidebarList = [{
     }, {
       title: '内置模块 URL',
       path: '/nodejs/nodejs/10'
+    }, {
+      title: '流(Stream)和管道(Pipe)',
+      path: '/nodejs/nodejs/11'
     }]
   }, {
     title: 'Express',
