@@ -325,7 +325,7 @@ let sidebarList = [{
     }]
   }, {
     title: 'Express',
-    path: '/express/',
+    path: '/nodejs/express/',
     sortNext: true,
     children: [{}, {
       title: 'Express 简介',
@@ -336,21 +336,16 @@ let sidebarList = [{
 // 格式化，增加序列号
 function sort(list, sortFlag) {
   if (list.length > 0 && !!sortFlag) {
+    list.forEach((item) => {
+      let { title, path } = item;
+      path = (path || '/999').split('/').pop();
+      item.index = path;
+      item.title = [path, title].join('、');
+    });
     list.sort((a, b) => {
-      // 防止报错。输出一个假目录
-      a.path = a.path || '/999';
-      a.title = a.title || '目录配置有问题'
-      b.path = b.path || '/999';
-      b.title = b.title || '目录配置有问题'
-      let pa = a.path.split('/');
-      let pb = b.path.split('/');
-      pa = pa.pop();
-      pb = pb.pop();
-      return Number(pa) - Number(pb);
+      return Number(a.index) - Number(b.index);
     });
-    list.forEach((item, index) => {
-      item.title = [index + 1, item.title].join('、');
-    });
+
   }
   list.forEach((item) => {
     if (item.children && item.children.length > 0) {
