@@ -338,14 +338,17 @@ function sort(list, sortFlag) {
   if (list.length > 0 && !!sortFlag) {
     list.forEach((item) => {
       let { title, path } = item;
-      path = (path || '/999').split('/').pop();
-      item.index = path;
-      item.title = [path, title].join('、');
+      if (title && path) {
+        item.index = path.split('/').pop();
+        item.title = [item.index, title].join('、');
+      } else {
+        item.title = '404 目录不存在';
+        item.index = '0';
+      };
     });
     list.sort((a, b) => {
       return Number(a.index) - Number(b.index);
     });
-
   }
   list.forEach((item) => {
     if (item.children && item.children.length > 0) {
