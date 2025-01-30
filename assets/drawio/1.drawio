@@ -1,0 +1,104 @@
+<mxfile host="65bd71144e">
+    <diagram id="BP0s1PqeJ8omsrFhGxX3" name="Page-1">
+        <mxGraphModel dx="1168" dy="560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FCFCFC" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f3f5f7;dashed=1;strokeColor=#0D0701;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="70" width="110" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;宏任务&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="10" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="task1" style="rounded=1;whiteSpace=wrap;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#42b983;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="90" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="task1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#42b983;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="210" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="task1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#42b983;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="150" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="。。。" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#42b983;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="270" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;微任务&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="10" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;dashed=1;strokeColor=#0D0701;strokeWidth=2;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="70" width="110" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="task1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#e7c000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="238" y="90" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="task1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#e7c000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="238" y="210" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="task1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#E7C000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="238" y="150" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="。。。" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#0D0701;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#e7c000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="238" y="270" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;事件循环&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="10" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=2;startArrow=none;" parent="1" source="28" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="宏任务" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;strokeColor=#0D0701;strokeWidth=2;fontSize=18;fontColor=#000000;fillColor=#42B983;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="526" y="77" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;startArrow=none;" parent="1" source="33" target="31" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;" parent="1" source="26" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="731" y="247"/>
+                            <mxPoint x="731" y="97"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="微任务队列是否为空" style="rhombus;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;strokeColor=#A50040;strokeWidth=2;fontSize=16;fontColor=#000000;fillColor=#E7C000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="471" y="217" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=2;endArrow=none;" parent="1" source="23" target="28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="586" y="117" as="sourcePoint"/>
+                        <mxPoint x="586" y="187" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="执行结束" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;fontStyle=1;horizontal=1;" parent="1" vertex="1">
+                    <mxGeometry x="546" y="157" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;" parent="1" source="31" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="410" y="392"/>
+                            <mxPoint x="410" y="97"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="依次执行&lt;br&gt;所有微任务" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;strokeColor=#0D0701;strokeWidth=2;fontSize=18;fontColor=#000000;fillColor=#42B983;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="516" y="367" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;endArrow=none;" parent="1" source="26" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="586" y="247" as="sourcePoint"/>
+                        <mxPoint x="586" y="297" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;fontStyle=1;horizontal=1;" parent="1" vertex="1">
+                    <mxGeometry x="566" y="307" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;fontStyle=1;horizontal=1;" parent="1" vertex="1">
+                    <mxGeometry x="696" y="157" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="执&lt;br&gt;行&lt;br&gt;新&lt;br&gt;的&lt;br&gt;宏&lt;br&gt;任&lt;br&gt;务" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="405" y="182" width="40" height="130" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
