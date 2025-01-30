@@ -327,7 +327,7 @@ let sidebarList = [{
     title: 'Express',
     path: '/nodejs/express/',
     sortNext: true,
-    children: [{}, {
+    children: [{
       title: 'Express 简介',
       path: '/nodejs/express/1'
     }]
