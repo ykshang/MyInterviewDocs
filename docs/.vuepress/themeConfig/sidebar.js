@@ -328,6 +328,12 @@ let sidebarList = [{
     }, {
       title: '跨域问题',
       path: '/nodejs/nodejs/12'
+    }, {
+      title: '缓存处理',
+      path: '/nodejs/nodejs/13'
+    // }, {
+    //   title: '模块化',
+    //   path: '/nodejs/nodejs/14'
     }]
   }, {
     title: 'Express',
