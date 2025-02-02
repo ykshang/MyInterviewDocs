@@ -325,6 +325,9 @@ let sidebarList = [{
     }, {
       title: '流(Stream)和管道(Pipe)',
       path: '/nodejs/nodejs/11'
+    }, {
+      title: '跨域问题',
+      path: '/nodejs/nodejs/12'
     }]
   }, {
     title: 'Express',
