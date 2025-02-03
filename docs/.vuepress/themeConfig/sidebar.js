@@ -331,9 +331,9 @@ let sidebarList = [{
     }, {
       title: '缓存处理',
       path: '/nodejs/nodejs/13'
-    // }, {
-    //   title: '模块化',
-    //   path: '/nodejs/nodejs/14'
+    }, {
+      title: '数据库',
+      path: '/nodejs/nodejs/14'
     }]
   }, {
     title: 'Express',
