@@ -334,6 +334,11 @@ let sidebarList = [{
     }, {
       title: '数据库',
       path: '/nodejs/nodejs/14'
+    }, {
+      title: '如何处理并发请求',
+      path: '/nodejs/nodejs/15'
+
+      
     }]
   }, {
     title: 'Express',
