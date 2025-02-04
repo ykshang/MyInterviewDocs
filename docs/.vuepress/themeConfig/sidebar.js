@@ -353,7 +353,7 @@ let sidebarList = [{
       path: '/nodejs/express/2'
     }, {
       title: '中间件',
-      path: '/nodejs/express/2'
+      path: '/nodejs/express/3'
     }]
   }]
 }]
