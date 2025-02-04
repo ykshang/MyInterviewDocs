@@ -347,6 +347,9 @@ let sidebarList = [{
     children: [{
       title: 'Express 简介',
       path: '/nodejs/express/1'
+    }, {
+      title: '路由',
+      path: '/nodejs/express/2'
     }]
   }]
 }]
