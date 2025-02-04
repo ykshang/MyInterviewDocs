@@ -290,56 +290,56 @@ let sidebarList = [{
   path: '/nodejs/',
   children: [{
     title: 'Node.js',
-    path: '/nodejs/nodejs/',
+    path: '/nodejs/node/',
     sortNext: true,
     children: [{
       title: 'Node.js简介',
-      path: '/nodejs/nodejs/1',
+      path: '/nodejs/node/1',
     }, {
       title: 'Node.js 和 浏览器之间的区别',
-      path: '/nodejs/nodejs/2'
+      path: '/nodejs/node/2'
     }, {
       title: 'NPM 包管理器',
-      path: '/nodejs/nodejs/3'
+      path: '/nodejs/node/3'
     }, {
       title: 'NPM、PNPM、Yarn 的对比',
-      path: '/nodejs/nodejs/4'
+      path: '/nodejs/node/4'
     }, {
       title: '软链接和硬链接',
-      path: '/nodejs/nodejs/5'
+      path: '/nodejs/node/5'
     }, {
       title: '内置模块 fs',
-      path: '/nodejs/nodejs/6'
+      path: '/nodejs/node/6'
     }, {
       title: '内置模块 path',
-      path: '/nodejs/nodejs/7'
+      path: '/nodejs/node/7'
     }, {
       title: '内置模块 Buffer',
-      path: '/nodejs/nodejs/8'
+      path: '/nodejs/node/8'
     }, {
       title: '内置模块 http',
-      path: '/nodejs/nodejs/9'
+      path: '/nodejs/node/9'
     }, {
       title: '内置模块 URL',
-      path: '/nodejs/nodejs/10'
+      path: '/nodejs/node/10'
     }, {
       title: '流(Stream)和管道(Pipe)',
-      path: '/nodejs/nodejs/11'
+      path: '/nodejs/node/11'
     }, {
       title: '跨域问题',
-      path: '/nodejs/nodejs/12'
+      path: '/nodejs/node/12'
     }, {
       title: '缓存处理',
-      path: '/nodejs/nodejs/13'
+      path: '/nodejs/node/13'
     }, {
       title: '数据库',
-      path: '/nodejs/nodejs/14'
+      path: '/nodejs/node/14'
     }, {
       title: '如何处理并发请求',
-      path: '/nodejs/nodejs/15'
+      path: '/nodejs/node/15'
     }, {
       title: 'Reactor 反应器模式',
-      path: '/nodejs/nodejs/16'
+      path: '/nodejs/node/16'
     }]
   }, {
     title: 'Express',
