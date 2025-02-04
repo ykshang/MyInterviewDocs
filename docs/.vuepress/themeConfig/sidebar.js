@@ -358,6 +358,9 @@ let sidebarList = [{
     }, {
       title: '静态文件托管',
       path: '/nodejs/express/4'
+    }, {
+      title: '视图引擎 View Engine',
+      path: '/nodejs/express/5'
     }]
   }]
 }]
