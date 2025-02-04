@@ -286,8 +286,9 @@ let sidebarList = [{
     path: '/network/18'
   }]
 }, {
-  title: 'Node.js',
+  title: 'Node.js 相关',
   path: '/nodejs/',
+  initialOpenGroupIndex: -1,
   children: [{
     title: 'Node.js',
     path: '/nodejs/node/',
