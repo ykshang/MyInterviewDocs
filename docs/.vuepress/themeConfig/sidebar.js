@@ -337,8 +337,9 @@ let sidebarList = [{
     }, {
       title: '如何处理并发请求',
       path: '/nodejs/nodejs/15'
-
-      
+    }, {
+      title: 'Reactor 反应器模式',
+      path: '/nodejs/nodejs/16'
     }]
   }, {
     title: 'Express',
@@ -349,6 +350,9 @@ let sidebarList = [{
       path: '/nodejs/express/1'
     }, {
       title: '路由',
+      path: '/nodejs/express/2'
+    }, {
+      title: '中间件',
       path: '/nodejs/express/2'
     }]
   }]
