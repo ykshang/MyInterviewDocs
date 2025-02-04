@@ -354,6 +354,9 @@ let sidebarList = [{
     }, {
       title: '中间件',
       path: '/nodejs/express/3'
+    }, {
+      title: '静态文件托管',
+      path: '/nodejs/express/4'
     }]
   }]
 }]
