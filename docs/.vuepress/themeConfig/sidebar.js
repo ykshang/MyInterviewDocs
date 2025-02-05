@@ -362,10 +362,11 @@ let sidebarList = [{
       title: '视图引擎 View Engine',
       path: '/nodejs/express/5'
     }, {
-      title: 'Router 模块化路由',
+      title: '模块化路由 Router',
       path: '/nodejs/express/6'
-
-      
+    }, {
+      title: '生成器工具 express-generator',
+      path: '/nodejs/express/7'
     }]
   }]
 }]
