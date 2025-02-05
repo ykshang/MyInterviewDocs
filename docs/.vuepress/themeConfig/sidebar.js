@@ -367,6 +367,10 @@ let sidebarList = [{
     }, {
       title: '生成器工具 express-generator',
       path: '/nodejs/express/7'
+    }, {
+      title: '路由保护、重定向',
+      path: '/nodejs/express/8'
+      
     }]
   }]
 }]
