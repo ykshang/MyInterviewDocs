@@ -341,6 +341,12 @@ let sidebarList = [{
     }, {
       title: '防盗链',
       path: '/nodejs/node/16'
+    }, {
+      title: '错误处理',
+      path: '/nodejs/node/17'
+    }, {
+      title: '代码调试',
+      path: '/nodejs/node/18'
     }]
   }, {
     title: 'Express',
