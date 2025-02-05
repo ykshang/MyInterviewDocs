@@ -339,7 +339,7 @@ let sidebarList = [{
       title: '如何处理并发请求',
       path: '/nodejs/node/15'
     }, {
-      title: 'Reactor 反应器模式',
+      title: '防盗链',
       path: '/nodejs/node/16'
     }]
   }, {
