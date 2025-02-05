@@ -376,7 +376,14 @@ let sidebarList = [{
     }, {
       title: '路由保护、重定向',
       path: '/nodejs/express/8'
-      
+    }]
+  }, {
+    title: '数据库',
+    path: '/nodejs/database/',
+    sortNext: true,
+    children: [{
+      title: 'MangoDB',
+      path: '/nodejs/database/1'
     }]
   }]
 }]
