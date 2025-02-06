@@ -374,17 +374,17 @@ let sidebarList = [{
       title: '生成器工具 express-generator',
       path: '/nodejs/express/7'
     }]
-  // }, {
-  //   title: '数据库',
-  //   path: '/nodejs/database/',
-  //   sortNext: true,
-  //   children: [{
-  //     title: 'MangoDB 简介',
-  //     path: '/nodejs/database/1'
-  //   }, {
-  //     title: 'MangoDB 使用',
-  //     path: '/nodejs/database/2'
-  //   }]
+    // }, {
+    //   title: '数据库',
+    //   path: '/nodejs/database/',
+    //   sortNext: true,
+    //   children: [{
+    //     title: 'MangoDB 简介',
+    //     path: '/nodejs/database/1'
+    //   }, {
+    //     title: 'MangoDB 使用',
+    //     path: '/nodejs/database/2'
+    //   }]
   }]
 }, {
   title: '数据库',
@@ -397,6 +397,12 @@ let sidebarList = [{
     children: [{
       title: '简介',
       path: '/database/MangoDB/1',
+    }, {
+      title: '下载、安装',
+      path: '/database/MangoDB/2',
+    }, {
+      title: '命令行操作',
+      path: '/database/MangoDB/3',
     }]
   }, {
     title: 'MySql',
