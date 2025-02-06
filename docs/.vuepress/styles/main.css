@@ -21,6 +21,7 @@
 .theme-default-content>.custom-block.tip>ol>li>code,
 .theme-default-content>.custom-block.danger>p>code,
 .theme-default-content>.custom-block.warning>p>code,
+.theme-default-content>blockquote>p>code,
 .theme-default-content>ul>li>p>code {
   background-color: #ffeee8 !important;
   color: #ff561b !important;
