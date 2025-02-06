@@ -374,25 +374,32 @@ let sidebarList = [{
       title: '生成器工具 express-generator',
       path: '/nodejs/express/7'
     }]
-  }, {
-    title: '数据库',
-    path: '/nodejs/database/',
-    sortNext: true,
-    children: [{
-      title: 'MangoDB 简介',
-      path: '/nodejs/database/1'
-    }, {
-      title: 'MangoDB 使用',
-      path: '/nodejs/database/2'
-    }]
+  // }, {
+  //   title: '数据库',
+  //   path: '/nodejs/database/',
+  //   sortNext: true,
+  //   children: [{
+  //     title: 'MangoDB 简介',
+  //     path: '/nodejs/database/1'
+  //   }, {
+  //     title: 'MangoDB 使用',
+  //     path: '/nodejs/database/2'
+  //   }]
   }]
 }, {
-  title: 'Node.js',
-  path: '/nodejs/node/',
-  sortNext: true,
+  title: '数据库',
+  path: '/database/',
   children: [{
-    title: 'Node.js',
-    path: '/nodejs/node/',
+    title: 'MangoDB',
+    path: '/database/MangoDB/',
+    sortNext: true,
+    children: [{
+      title: '简介',
+      path: '/database/MangoDB/1',
+    }]
+  }, {
+    title: 'MySql',
+    path: '/database/MySql/'
   }]
 }]
 // 格式化，增加序列号
