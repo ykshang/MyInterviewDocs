@@ -379,8 +379,11 @@ let sidebarList = [{
     path: '/nodejs/database/',
     sortNext: true,
     children: [{
-      title: 'MangoDB',
+      title: 'MangoDB 简介',
       path: '/nodejs/database/1'
+    }, {
+      title: 'MangoDB 使用',
+      path: '/nodejs/database/2'
     }]
   }]
 }]
