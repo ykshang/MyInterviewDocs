@@ -386,6 +386,14 @@ let sidebarList = [{
       path: '/nodejs/database/2'
     }]
   }]
+}, {
+  title: 'Node.js',
+  path: '/nodejs/node/',
+  sortNext: true,
+  children: [{
+    title: 'Node.js',
+    path: '/nodejs/node/',
+  }]
 }]
 // 格式化，增加序列号
 function sort(list, sortFlag) {
