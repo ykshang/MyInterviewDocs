@@ -389,6 +389,7 @@ let sidebarList = [{
 }, {
   title: '数据库',
   path: '/database/',
+  initialOpenGroupIndex: -1,
   children: [{
     title: 'MangoDB',
     path: '/database/MangoDB/',
