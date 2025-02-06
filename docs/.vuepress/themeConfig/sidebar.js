@@ -401,7 +401,7 @@ let sidebarList = [{
       title: '下载、安装',
       path: '/database/MangoDB/2',
     }, {
-      title: '命令行操作',
+      title: '命令行交互',
       path: '/database/MangoDB/3',
     }]
   }, {
