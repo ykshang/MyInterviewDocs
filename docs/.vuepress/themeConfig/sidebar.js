@@ -401,8 +401,14 @@ let sidebarList = [{
       title: '下载、安装',
       path: '/database/MangoDB/2',
     }, {
-      title: '命令行交互',
+      title: '数据库操作',
       path: '/database/MangoDB/3',
+    }, {
+      title: '集合操作',
+      path: '/database/MangoDB/4',
+    }, {
+      title: '文档操作',
+      path: '/database/MangoDB/5',
     }]
   }, {
     title: 'MySql',
