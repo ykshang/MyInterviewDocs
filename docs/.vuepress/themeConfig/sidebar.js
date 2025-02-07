@@ -409,6 +409,18 @@ let sidebarList = [{
     }, {
       title: '文档操作',
       path: '/database/MangoDB/5',
+    }, {
+      title: '条件操作符',
+      path: '/database/MangoDB/6',
+    }, {
+      title: '分页',
+      path: '/database/MangoDB/7',
+    }, {
+      title: '排序',
+      path: '/database/MangoDB/8',
+    }, {
+      title: '索引',
+      path: '/database/MangoDB/9',
     }]
   }, {
     title: 'MySql',
