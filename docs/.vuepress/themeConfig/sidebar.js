@@ -382,7 +382,7 @@ let sidebarList = [{
         title: 'MangoDB',
         path: '/nodejs/database/1'
       }, {
-        title: 'MySql',
+        title: 'Mongoose',
         path: '/nodejs/database/2'
       }]
   }]
