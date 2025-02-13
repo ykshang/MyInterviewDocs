@@ -24,6 +24,9 @@ let sidebarList = [{
   }, {
     title: '前端路由',
     path: '/browser/3'
+  }, {
+    title: '前端主题切换',
+    path: '/browser/4'
   }]
 }, {
   title: 'JS基础',
