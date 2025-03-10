@@ -3,7 +3,7 @@ import { defineNavbarConfig } from 'vuepress-theme-plume'
 export const navbar = defineNavbarConfig([
   { text: '首页', link: '/' },
   // { text: '博客', link: '/blog/' },
-  { text: '按标签查找', link: '/blog/tags/' },
+  { text: '杂谈', link: '/blog/tags/' },
   // { text: '归档', link: '/blog/archives/' },
   {
     text: '前端基础',
