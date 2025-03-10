@@ -5,7 +5,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
-  title: '开发者日志',
+  title: '成长日志',
   description: '',
 
   head: [
@@ -65,6 +65,7 @@ export default defineUserConfig({
     // },
 
     plugins: {
+      git: true,
       /**
        * Shiki 代码高亮
        * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
