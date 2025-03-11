@@ -7,9 +7,15 @@
         <div class="parent">
           <div class="text">{{ scope.row.address }}</div>
           <div class="btn-g">
-            <el-button class="btn-item" type="primary" text>新增</el-button>
-            <el-button class="btn-item" type="primary" text>编辑</el-button>
-            <el-button class="btn-item" type="primary" text>删除</el-button>
+            <el-button
+              class="btn-item"
+              v-for="item in btnList"
+              :key="item"
+              type="primary"
+              text
+              @click="onclick(item)"
+              >{{ item }}</el-button
+            >
           </div>
         </div>
       </template>
@@ -17,7 +23,10 @@
   </el-table>
 </template>
 
-<script setup>
+<script setup>  
+import { ElMessage } from 'element-plus'
+
+const btnList = ["新增", "编辑", "删除"];
 const tableData = [
   {
     date: "2016-05-03",
@@ -40,6 +49,12 @@ const tableData = [
     address: "No. 189, Grove St, Los Angeles",
   },
 ];
+function onclick (value) {
+  ElMessage({
+    message: `这是一个 ${value} 按钮`,
+    type: 'success',
+  });
+}
 </script>
 <style scoped>
 .parent {
@@ -59,7 +74,7 @@ const tableData = [
   margin-left: 5px;
 }
 .btn-item {
-  padding: 5px;
+  padding: 0 5px;
   height: inherit;
 }
 /* vuepres 内置样式影响了element的样式 */
