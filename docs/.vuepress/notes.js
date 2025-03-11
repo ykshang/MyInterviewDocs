@@ -6,14 +6,20 @@ const htmlNote = defineNoteConfig({
   link: '/Html',
   sidebar: 'auto',
 })
-// HTML 笔记配置
+// CSS 笔记配置
 const cssNote = defineNoteConfig({
   dir: 'CSS',
   link: '/CSS',
   sidebar: 'auto',
 })
+// CSS 笔记配置
+const JavaScriptNote = defineNoteConfig({
+  dir: 'Javascript',
+  link: '/Javascript',
+  sidebar: 'auto',
+})
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote,cssNote],
+  notes: [htmlNote, cssNote, JavaScriptNote],
 })
