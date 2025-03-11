@@ -5,6 +5,7 @@ import { defineClientConfig } from 'vuepress/client'
 // import Swiper from 'vuepress-theme-plume/features/Swiper.vue'
 
 import CustomComponent from './theme/components/Custom.vue'
+import demo1 from './theme/demo/demo1.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // import './theme/styles/custom.css'
@@ -20,5 +21,6 @@ export default defineClientConfig({
     // your custom components
     app.use(ElementPlus)
     app.component('CustomComponent', CustomComponent)
+    app.component('demo1', demo1)
   },
 })
