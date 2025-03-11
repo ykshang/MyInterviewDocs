@@ -7,7 +7,6 @@ import { defineClientConfig } from 'vuepress/client'
 import CustomComponent from './theme/components/Custom.vue'
 import demo1 from './theme/demo/demo1.vue'
 import ElementPlus from 'element-plus'
-import { ElMessage } from 'element-plus'
 import 'element-plus/dist/index.css'
 // import './theme/styles/custom.css'
 export default defineClientConfig({
@@ -19,9 +18,6 @@ export default defineClientConfig({
     // app.component('Swiper', Swiper) // you should install `swiper`
 
     // your custom components
-    // app.config.globalProperties.$message = ElMessage;
-    app.$message = ElMessage;
-    // console.log(ElMessage);
     app.use(ElementPlus);
     app.component('CustomComponent', CustomComponent)
     app.component('demo1', demo1)
