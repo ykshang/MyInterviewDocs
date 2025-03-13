@@ -1,5 +1,5 @@
 ---
-title: git clean
+title: clean
 createTime: 2025/03/13 20:17:00
 permalink: /Git/7801l4qt/
 ---

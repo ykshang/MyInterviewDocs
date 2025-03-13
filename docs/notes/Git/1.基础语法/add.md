@@ -1,5 +1,5 @@
 ---
-title: git add
+title: add
 createTime: 2025/03/13 20:16:59
 permalink: /Git/vzmk1n9w/
 ---

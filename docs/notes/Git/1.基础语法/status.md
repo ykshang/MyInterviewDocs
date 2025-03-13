@@ -1,5 +1,5 @@
 ---
-title: git status
+title: status
 createTime: 2025/03/13 20:17:00
 permalink: /Git/257icniq/
 ---
@@ -21,7 +21,7 @@ git status [<options>…​] [--] [<pathspec>…​]
 ## 常用命令举例：
 
 - 查看当前工作区状态
-  
+
   ```bash
   git status
   ```

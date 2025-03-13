@@ -1,5 +1,5 @@
 ---
-title: git diff
+title: diff
 createTime: 2025/03/13 20:17:00
 permalink: /Git/lns3t56l/
 ---

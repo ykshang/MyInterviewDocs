@@ -1,5 +1,5 @@
 ---
-title: git fetch
+title: fetch
 createTime: 2025/03/13 20:17:00
 permalink: /Git/gvhcmoay/
 ---

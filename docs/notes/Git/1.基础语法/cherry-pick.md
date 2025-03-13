@@ -1,5 +1,5 @@
 ---
-title: git cherry-pick
+title: cherry-pick
 createTime: 2025/03/13 20:17:00
 permalink: /Git/um7ntwk0/
 ---

@@ -1,5 +1,5 @@
 ---
-title: git branch
+title: branch
 createTime: 2025/03/13 20:16:59
 permalink: /Git/340brab4/
 ---
