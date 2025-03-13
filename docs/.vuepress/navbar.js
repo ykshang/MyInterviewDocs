@@ -34,8 +34,8 @@ export const navbar = defineNavbarConfig([
     items: [{
       text: '代码管理',
       items: [
-        { text: 'Git', link: '/blog/' },
-        { text: 'SVN', link: '/blog/' },
+        { text: 'Git', link: '/notes/Git/' },
+        { text: 'SVN', link: '/' },
       ]
     }]
   },

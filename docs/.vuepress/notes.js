@@ -30,10 +30,16 @@ const ExpressNote = defineNoteConfig({
   link: '/Express',
   sidebar: 'auto',
 })
+// Git 笔记配置
+const GitNote = defineNoteConfig({
+  dir: 'Git',
+  link: '/Git',
+  sidebar: 'auto',
+})
 
 
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote],
 })
