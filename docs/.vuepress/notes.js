@@ -24,8 +24,16 @@ const KoaNote = defineNoteConfig({
   link: '/Koa',
   sidebar: 'auto',
 })
+// Koa 笔记配置
+const ExpressNote = defineNoteConfig({
+  dir: 'Express',
+  link: '/Express',
+  sidebar: 'auto',
+})
+
+
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote],
 })

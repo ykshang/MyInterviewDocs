@@ -17,6 +17,7 @@ export const navbar = defineNavbarConfig([
     }, {
       text: '进阶',
       items: [
+        { text: 'Express', link: '/notes/Express/' },
         { text: 'Koa', link: '/notes/Koa/' },
       ]
     }]
