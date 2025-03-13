@@ -36,10 +36,28 @@ const GitNote = defineNoteConfig({
   link: '/Git',
   sidebar: 'auto',
 })
+// Vue 笔记配置
+const VueNote = defineNoteConfig({
+  dir: 'Vue',
+  link: '/Vue',
+  sidebar: 'auto',
+})
+// React 笔记配置
+const ReactNote = defineNoteConfig({
+  dir: 'React',
+  link: '/React',
+  sidebar: 'auto',
+})
+// Vue 笔记配置
+const AngularNote = defineNoteConfig({
+  dir: 'Angular',
+  link: '/Angular',
+  sidebar: 'auto',
+})
 
 
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote],
 })

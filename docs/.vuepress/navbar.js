@@ -15,6 +15,13 @@ export const navbar = defineNavbarConfig([
         { text: 'Javascript', link: '/notes/Javascript/' },
       ]
     }, {
+      text: '三大框架',
+      items: [
+        { text: 'Vue', link: '/notes/Vue/' },
+        { text: 'React', link: '/notes/React/' },
+        { text: 'Angular', link: '/notes/Angular/' },
+      ]
+    }, {
       text: '进阶',
       items: [
         { text: 'Express', link: '/notes/Express/' },
