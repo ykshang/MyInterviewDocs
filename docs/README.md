@@ -18,5 +18,5 @@ config:
         -
           theme: alt
           text: Github →
-          link: /blog/
+          link: https://github.com/ykshang
 ---
