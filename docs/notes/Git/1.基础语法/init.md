@@ -1,5 +1,5 @@
 ---
-title: git init
+title: init
 createTime: 2025/03/13 20:17:00
 permalink: /Git/yvipb59y/
 ---
