@@ -48,7 +48,7 @@ const ReactNote = defineNoteConfig({
   link: '/React',
   sidebar: 'auto',
 })
-// Vue 笔记配置
+// Angular 笔记配置
 const AngularNote = defineNoteConfig({
   dir: 'Angular',
   link: '/Angular',
