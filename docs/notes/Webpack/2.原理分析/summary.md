@@ -1,3 +1,8 @@
+---
+title: summary
+createTime: 2025/03/15 14:14:40
+permalink: /Webpack/ai4wjhrd/
+---
 # 总结
 
 本章节我们学习了 webpack 中的 loader 和 plugin 用法。包括是什么，怎么使用，如何自定义等。

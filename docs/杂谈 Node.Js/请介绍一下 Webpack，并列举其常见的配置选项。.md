@@ -1,4 +1,14 @@
-# 3、请介绍一下 Webpack，并列举其常见的配置选项。
+---
+title: 请介绍一下 Webpack，并列举其常见的配置选项。
+createTime: 2025/03/15 14:24:59
+permalink: /article/oq2ve55x/
+tags:
+  - 前端
+  - 工具
+  - 构建
+  - 前端工具
+  - Webpack
+---
 
 ## 一、简介
 

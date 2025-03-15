@@ -6,8 +6,6 @@ tags:
   - Express
   - Egg.js
   - Koa.js
-categories:
-  - 技术
   - 前端
   - 前端框架
   - Node.js

@@ -1,3 +1,8 @@
+---
+title: plugin
+createTime: 2025/03/15 14:14:40
+permalink: /Webpack/g9xk0dwp/
+---
 # Plugin 原理
 
 ## Plugin 的作用
