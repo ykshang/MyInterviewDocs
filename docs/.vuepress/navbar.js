@@ -32,11 +32,11 @@ export const navbar = defineNavbarConfig([
   }, {
     text: '工程化',
     items: [
-      { text: 'Webpack', link: '/blog/' },
-      { text: 'Babel', link: '/blog/' },
+      { text: 'Webpack', link: '/notes/Webpack/' },
       { text: 'Vite', link: '/notes/Vite/' },
-      { text: 'Gulp', link: '/blog/' },
-      { text: 'Grunt', link: '/blog/' },
+      { text: 'Babel', link: '/notes/Babel/' },
+      { text: 'Gulp', link: '/notes/Gulp/' },
+      { text: 'Grunt', link: '/notes/Grunt/' },
     ]
   }, {
     text: '项目管理',
@@ -44,7 +44,7 @@ export const navbar = defineNavbarConfig([
       text: '代码管理',
       items: [
         { text: 'Git', link: '/notes/Git/' },
-        { text: 'SVN', link: '/' },
+        { text: 'SVN', link: '/notes/SVN/' },
       ]
     }]
   },

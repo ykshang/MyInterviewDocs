@@ -78,8 +78,15 @@ const UniAppNote = defineNoteConfig({
   link: '/UniApp',
   sidebar: 'auto',
 })
+// Webpack 笔记配置
+const WebpackNote = defineNoteConfig({
+  dir: 'Webpack',
+  link: '/Webpack',
+  sidebar: 'auto',
+})
+
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote],
 })
