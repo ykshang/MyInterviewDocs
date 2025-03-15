@@ -1,9 +1,13 @@
 ---
-title: 7
+title: 什么是 ESlint，有什么作用？
 createTime: 2025/03/15 14:24:59
 permalink: /article/doigsylj/
+tags:
+  - ESlint
+  - 前端
+  - 代码检查
+  - 代码规范
 ---
-# 7、什么是 ESlint，有什么作用？
 
 ## 一、简介
 

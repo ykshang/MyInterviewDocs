@@ -1,7 +1,11 @@
 ---
-title: 8
+title: 你遇到过那些 Webpack 的打包问题？
 createTime: 2025/03/15 14:24:59
 permalink: /article/jr6e8a0w/
+tags:
+  - Webpack
+  - 打包
+  - 前端工具
 ---
 # 8、你遇到过那些 Webpack 的打包问题？
 

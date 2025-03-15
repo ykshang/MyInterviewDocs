@@ -1,9 +1,13 @@
 ---
-title: 6
+title: 什么是 Babel，他的作用是什么？
 createTime: 2025/03/15 14:24:59
 permalink: /article/h5p3qj30/
+tags:
+  - Babel
+  - 前端
+  - 构建
+  - 前端工具
 ---
-# 6、什么是 Babel，他的作用是什么？
 
 ## 一、概念和作用
 

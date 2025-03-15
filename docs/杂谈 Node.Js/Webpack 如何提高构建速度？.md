@@ -1,9 +1,13 @@
 ---
-title: 5
+title: Webpack 如何提高构建速度？
 createTime: 2025/03/15 14:24:59
 permalink: /article/1nxo855s/
+tags:
+  - Webpack
+  - 构建
+  - 前端工具
+  - 构建优化
 ---
-# 5、 Webpack 如何提高构建速度？
 
 ## 一、常见策略
 

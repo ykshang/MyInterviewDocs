@@ -1,7 +1,13 @@
 ---
-title: 12
+title: 你用过 Lighthouse 吗？如何利用 Lighthouse 进行性能分析？
 createTime: 2025/03/15 14:24:59
 permalink: /article/tba4opa6/
+tags:
+  - 性能
+  - 前端
+  - 性能优化
+  - 性能分析
+  - Lighthouse
 ---
 # 12、你用过 Lighthouse 吗？如何利用 Lighthouse 进行性能分析？
 
