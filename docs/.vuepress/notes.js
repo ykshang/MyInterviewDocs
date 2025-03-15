@@ -54,10 +54,32 @@ const AngularNote = defineNoteConfig({
   link: '/Angular',
   sidebar: 'auto',
 })
-
-
+// Vite 笔记配置
+const ViteNote = defineNoteConfig({
+  dir: 'Vite',
+  link: '/Vite',
+  sidebar: 'auto',
+})
+// Babel 笔记配置
+const BabelNote = defineNoteConfig({
+  dir: 'Babel',
+  link: '/Babel',
+  sidebar: 'auto',
+})
+// NodeJs 笔记配置
+const NodeJsNote = defineNoteConfig({
+  dir: 'NodeJs',
+  link: '/NodeJs',
+  sidebar: 'auto',
+})
+// UniApp 笔记配置
+const UniAppNote = defineNoteConfig({
+  dir: 'UniApp',
+  link: '/UniApp',
+  sidebar: 'auto',
+})
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote],
 })
