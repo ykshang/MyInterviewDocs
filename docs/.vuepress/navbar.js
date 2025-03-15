@@ -36,7 +36,7 @@ export const navbar = defineNavbarConfig([
       }, {
         text: '数据库',
         items: [
-          { text: 'MongoDB', link: '/notes/MongoDB/' },
+          { text: 'MongoDB', link: '/notes/MangoDB/' },
         ]
       },
     ]
