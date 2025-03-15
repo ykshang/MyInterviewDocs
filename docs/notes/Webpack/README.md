@@ -28,7 +28,3 @@ permalink: /Webpack/
 - `Webpack` 零基础，想从事项目脚手架研发的人。
 - 具备 `Webpack` 开发经验，想要提升更多的人。
 - 不是很了解 `Webpack`，但是想提升工资的人。
-
-# 学习资料
-
-- 打开 [哔哩哔哩](http://www.bilibili.com/) 视频网站，搜索尚硅谷。
