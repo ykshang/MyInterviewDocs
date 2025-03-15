@@ -47,5 +47,11 @@ export const navbar = defineNavbarConfig([
         { text: 'SVN', link: '/notes/SVN/' },
       ]
     }]
+  }, {
+    text: '计算机基础',
+    items: [
+      { text: '算法', link: '/notes/Algorithm/' },
+      { text: '设计模式', link: '/notes/SVN/' },
+    ]
   },
 ])
