@@ -24,7 +24,7 @@ module: {
 
 其执行流程为：
 
-![loader执行流程](/imgs/source/loader1.png)
+![loader执行流程](../assets/loader1.png)
 
 我们要想控制 Loader 的执行顺序，可以从以下几个方面入手:
 
@@ -62,4 +62,4 @@ module: {
 
 Webpack 生命周期示意图
 
-![Webpack 插件生命周期](/imgs/source/plugin.jpg)
+![Webpack 插件生命周期](../assets/plugin.jpg)
