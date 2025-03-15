@@ -1,5 +1,5 @@
 ---
-title: 17
+title: 在 JavaScript 中，闭包的实现使用了堆还是栈？
 createTime: 2025/03/15 13:21:27
 permalink: /WebBasic/p8q37sxr/
 ---

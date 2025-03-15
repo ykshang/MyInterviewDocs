@@ -1,5 +1,5 @@
 ---
-title: 18
+title: 在 Angular、React 或 Vue 等前端框架中，组件的实例化存储在堆还是栈中？
 createTime: 2025/03/15 13:21:27
 permalink: /WebBasic/y7oea75h/
 ---

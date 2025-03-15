@@ -1,9 +1,8 @@
 ---
-title: 19
+title: 在 JavaScript 中，JSON 对象是存储在堆还是栈中的？
 createTime: 2025/03/15 13:21:27
 permalink: /WebBasic/qlmncb7x/
 ---
-# 19、在 JavaScript 中，JSON 对象是存储在堆还是栈中的？
 
 在 JavaScript 中，**JSON 对象实际上是存储在堆中的。**
 
