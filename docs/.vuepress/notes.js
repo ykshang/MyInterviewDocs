@@ -84,9 +84,21 @@ const WebpackNote = defineNoteConfig({
   link: '/Webpack',
   sidebar: 'auto',
 })
+// DesignPattern 笔记配置
+const DesignPatternNote = defineNoteConfig({
+  dir: 'DesignPattern',
+  link: '/DesignPattern',
+  sidebar: 'auto',
+})
+// Algorithm 笔记配置
+const AlgorithmNote = defineNoteConfig({
+  dir: 'Algorithm',
+  link: '/Algorithm',
+  sidebar: 'auto',
+})
 
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote],
 })
