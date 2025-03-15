@@ -1,9 +1,8 @@
 ---
-title: vue-cli
+title: React 脚手架
 createTime: 2025/03/15 14:15:54
-permalink: /Webpack/ktvw4hoc/
+permalink: /Webpack/znezxzbk/
 ---
-# Vue 脚手架
 
 ## 开发模式配置
 
@@ -12,13 +11,12 @@ permalink: /Webpack/ktvw4hoc/
 const path = require("path");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const { DefinePlugin } = require("webpack");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const getStyleLoaders = (preProcessor) => {
   return [
-    "vue-style-loader",
+    "style-loader",
     "css-loader",
     {
       loader: "postcss-loader",
@@ -45,59 +43,52 @@ module.exports = {
   module: {
     rules: [
       {
-        // 用来匹配 .css 结尾的文件
-        test: /\.css$/,
-        // use 数组里面 Loader 执行顺序是从右到左
-        use: getStyleLoaders(),
-      },
-      {
-        test: /\.less$/,
-        use: getStyleLoaders("less-loader"),
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: getStyleLoaders("sass-loader"),
-      },
-      {
-        test: /\.styl$/,
-        use: getStyleLoaders("stylus-loader"),
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+        oneOf: [
+          {
+            // 用来匹配 .css 结尾的文件
+            test: /\.css$/,
+            // use 数组里面 Loader 执行顺序是从右到左
+            use: getStyleLoaders(),
           },
-        },
-      },
-      {
-        test: /\.(ttf|woff2?)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(jsx|js)$/,
-        include: path.resolve(__dirname, "../src"),
-        loader: "babel-loader",
-        options: {
-          cacheDirectory: true,
-          cacheCompression: false,
-          plugins: [
-            // "@babel/plugin-transform-runtime" // presets中包含了
-          ],
-        },
-      },
-      // vue-loader不支持oneOf
-      {
-        test: /\.vue$/,
-        loader: "vue-loader", // 内部会给vue文件注入HMR功能代码
-        options: {
-          // 开启缓存
-          cacheDirectory: path.resolve(
-            __dirname,
-            "node_modules/.cache/vue-loader"
-          ),
-        },
+          {
+            test: /\.less$/,
+            use: getStyleLoaders("less-loader"),
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: getStyleLoaders("sass-loader"),
+          },
+          {
+            test: /\.styl$/,
+            use: getStyleLoaders("stylus-loader"),
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)$/,
+            type: "asset",
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+              },
+            },
+          },
+          {
+            test: /\.(ttf|woff2?)$/,
+            type: "asset/resource",
+          },
+          {
+            test: /\.(jsx|js)$/,
+            include: path.resolve(__dirname, "../src"),
+            loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+              cacheCompression: false,
+              plugins: [
+                // "@babel/plugin-transform-runtime", // presets中包含了
+                "react-refresh/babel", // 开启js的HMR功能
+              ],
+            },
+          },
+        ],
       },
     ],
   },
@@ -114,27 +105,25 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
+    new ReactRefreshWebpackPlugin(), // 解决js的HMR功能运行时全局变量的问题
+    // 将public下面的资源复制到dist目录去（除了index.html）
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "../public"),
           to: path.resolve(__dirname, "../dist"),
           toType: "dir",
-          noErrorOnMissing: true,
+          noErrorOnMissing: true, // 不生成错误
           globOptions: {
+            // 忽略文件
             ignore: ["**/index.html"],
           },
           info: {
+            // 跳过terser压缩js
             minimized: true,
           },
         },
       ],
-    }),
-    new VueLoaderPlugin(),
-    // 解决页面警告
-    new DefinePlugin({
-      __VUE_OPTIONS_API__: "true",
-      __VUE_PROD_DEVTOOLS__: "false",
     }),
   ],
   optimization: {
@@ -146,7 +135,7 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: [".vue", ".js", ".json"], // 自动补全文件扩展名，让vue可以使用
+    extensions: [".jsx", ".js", ".json"], // 自动补全文件扩展名，让jsx可以使用
   },
   devServer: {
     open: true,
@@ -154,7 +143,7 @@ module.exports = {
     port: 3000,
     hot: true,
     compress: true,
-    historyApiFallback: true, // 解决vue-router刷新404问题
+    historyApiFallback: true, // 解决react-router刷新404问题
   },
   mode: "development",
   devtool: "cheap-module-source-map",
@@ -169,11 +158,10 @@ const path = require("path");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const { DefinePlugin } = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const getStyleLoaders = (preProcessor) => {
   return [
@@ -196,7 +184,7 @@ const getStyleLoaders = (preProcessor) => {
 module.exports = {
   entry: "./src/main.js",
   output: {
-    path: undefined,
+    path: path.resolve(__dirname, "../dist"),
     filename: "static/js/[name].[contenthash:10].js",
     chunkFilename: "static/js/[name].[contenthash:10].chunk.js",
     assetModuleFilename: "static/js/[hash:10][ext][query]",
@@ -205,59 +193,51 @@ module.exports = {
   module: {
     rules: [
       {
-        // 用来匹配 .css 结尾的文件
-        test: /\.css$/,
-        // use 数组里面 Loader 执行顺序是从右到左
-        use: getStyleLoaders(),
-      },
-      {
-        test: /\.less$/,
-        use: getStyleLoaders("less-loader"),
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: getStyleLoaders("sass-loader"),
-      },
-      {
-        test: /\.styl$/,
-        use: getStyleLoaders("stylus-loader"),
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+        oneOf: [
+          {
+            // 用来匹配 .css 结尾的文件
+            test: /\.css$/,
+            // use 数组里面 Loader 执行顺序是从右到左
+            use: getStyleLoaders(),
           },
-        },
-      },
-      {
-        test: /\.(ttf|woff2?)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(jsx|js)$/,
-        include: path.resolve(__dirname, "../src"),
-        loader: "babel-loader",
-        options: {
-          cacheDirectory: true,
-          cacheCompression: false,
-          plugins: [
-            // "@babel/plugin-transform-runtime" // presets中包含了
-          ],
-        },
-      },
-      // vue-loader不支持oneOf
-      {
-        test: /\.vue$/,
-        loader: "vue-loader", // 内部会给vue文件注入HMR功能代码
-        options: {
-          // 开启缓存
-          cacheDirectory: path.resolve(
-            __dirname,
-            "node_modules/.cache/vue-loader"
-          ),
-        },
+          {
+            test: /\.less$/,
+            use: getStyleLoaders("less-loader"),
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: getStyleLoaders("sass-loader"),
+          },
+          {
+            test: /\.styl$/,
+            use: getStyleLoaders("stylus-loader"),
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)$/,
+            type: "asset",
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+              },
+            },
+          },
+          {
+            test: /\.(ttf|woff2?)$/,
+            type: "asset/resource",
+          },
+          {
+            test: /\.(jsx|js)$/,
+            include: path.resolve(__dirname, "../src"),
+            loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+              cacheCompression: false,
+              plugins: [
+                // "@babel/plugin-transform-runtime" // presets中包含了
+              ],
+            },
+          },
+        ],
       },
     ],
   },
@@ -274,30 +254,28 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
+    new MiniCssExtractPlugin({
+      filename: "static/css/[name].[contenthash:10].css",
+      chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
+    }),
+    // 将public下面的资源复制到dist目录去（除了index.html）
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "../public"),
           to: path.resolve(__dirname, "../dist"),
           toType: "dir",
-          noErrorOnMissing: true,
+          noErrorOnMissing: true, // 不生成错误
           globOptions: {
+            // 忽略文件
             ignore: ["**/index.html"],
           },
           info: {
+            // 跳过terser压缩js
             minimized: true,
           },
         },
       ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: "static/css/[name].[contenthash:10].css",
-      chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
-    }),
-    new VueLoaderPlugin(),
-    new DefinePlugin({
-      __VUE_OPTIONS_API__: "true",
-      __VUE_PROD_DEVTOOLS__: "false",
     }),
   ],
   optimization: {
@@ -341,7 +319,7 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: [".vue", ".js", ".json"],
+    extensions: [".jsx", ".js", ".json"],
   },
   mode: "production",
   devtool: "source-map",
@@ -354,10 +332,10 @@ module.exports = {
 
 ```json
 {
-  "name": "vue-cli",
+  "name": "react-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.js",
@@ -368,14 +346,14 @@ module.exports = {
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.17.0",
-    "@vue/cli-plugin-babel": "^5.0.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "babel-loader": "^8.2.5",
+    "babel-preset-react-app": "^10.0.1",
     "copy-webpack-plugin": "^10.2.4",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
-    "eslint-plugin-vue": "^8.7.1",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-webpack-plugin": "^3.1.1",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^3.2.3",
@@ -386,19 +364,21 @@ module.exports = {
     "imagemin-svgo": "^10.0.1",
     "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.5.0",
+    "react-refresh": "^0.13.0",
     "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
     "stylus-loader": "^6.2.0",
-    "vue-loader": "^17.0.0",
-    "vue-style-loader": "^4.1.3",
-    "vue-template-compiler": "^2.6.14",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.15"
+    "antd": "^4.20.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
   },
   "browserslist": ["last 2 version", "> 1%", "not dead"]
 }
@@ -408,13 +388,15 @@ module.exports = {
 
 ```js
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-  },
-  extends: ["plugin:vue/vue3-essential", "eslint:recommended"],
+  extends: ["react-app"], // 继承 react 官方规则
   parserOptions: {
-    parser: "@babel/eslint-parser",
+    babelOptions: {
+      presets: [
+        // 解决页面报错问题
+        ["babel-preset-react-app", false],
+        "babel-preset-react-app/prod",
+      ],
+    },
   },
 };
 ```
@@ -423,14 +405,16 @@ module.exports = {
 
 ```js
 module.exports = {
-  presets: ["@vue/cli-plugin-babel/preset"],
+  // 使用react官方规则
+  presets: ["react-app"],
 };
 ```
 
 ## 合并开发和生产配置
 
+- webpack.config.js
+
 ```js
-// webpack.config.js
 const path = require("path");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -438,22 +422,22 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const { DefinePlugin } = require("webpack");
-const CopyPlugin = require("copy-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 // 需要通过 cross-env 定义环境变量
 const isProduction = process.env.NODE_ENV === "production";
 
 const getStyleLoaders = (preProcessor) => {
   return [
-    isProduction ? MiniCssExtractPlugin.loader : "vue-style-loader",
+    isProduction ? MiniCssExtractPlugin.loader : "style-loader",
     "css-loader",
     {
       loader: "postcss-loader",
       options: {
         postcssOptions: {
-          plugins: ["postcss-preset-env"],
+          plugins: [
+            "postcss-preset-env", // 能解决大多数样式兼容性问题
+          ],
         },
       },
     },
@@ -477,64 +461,58 @@ module.exports = {
   module: {
     rules: [
       {
-        // 用来匹配 .css 结尾的文件
-        test: /\.css$/,
-        // use 数组里面 Loader 执行顺序是从右到左
-        use: getStyleLoaders(),
-      },
-      {
-        test: /\.less$/,
-        use: getStyleLoaders("less-loader"),
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: getStyleLoaders("sass-loader"),
-      },
-      {
-        test: /\.styl$/,
-        use: getStyleLoaders("stylus-loader"),
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+        oneOf: [
+          {
+            // 用来匹配 .css 结尾的文件
+            test: /\.css$/,
+            // use 数组里面 Loader 执行顺序是从右到左
+            use: getStyleLoaders(),
           },
-        },
-      },
-      {
-        test: /\.(ttf|woff2?)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(jsx|js)$/,
-        include: path.resolve(__dirname, "../src"),
-        loader: "babel-loader",
-        options: {
-          cacheDirectory: true,
-          cacheCompression: false,
-          plugins: [
-            // "@babel/plugin-transform-runtime" // presets中包含了
-          ],
-        },
-      },
-      // vue-loader不支持oneOf
-      {
-        test: /\.vue$/,
-        loader: "vue-loader", // 内部会给vue文件注入HMR功能代码
-        options: {
-          // 开启缓存
-          cacheDirectory: path.resolve(
-            __dirname,
-            "node_modules/.cache/vue-loader"
-          ),
-        },
+          {
+            test: /\.less$/,
+            use: getStyleLoaders("less-loader"),
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: getStyleLoaders("sass-loader"),
+          },
+          {
+            test: /\.styl$/,
+            use: getStyleLoaders("stylus-loader"),
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)$/,
+            type: "asset",
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+              },
+            },
+          },
+          {
+            test: /\.(ttf|woff2?)$/,
+            type: "asset/resource",
+          },
+          {
+            test: /\.(jsx|js)$/,
+            include: path.resolve(__dirname, "../src"),
+            loader: "babel-loader",
+            options: {
+              cacheDirectory: true, // 开启babel编译缓存
+              cacheCompression: false, // 缓存文件不要压缩
+              plugins: [
+                // "@babel/plugin-transform-runtime",  // presets中包含了
+                !isProduction && "react-refresh/babel",
+              ].filter(Boolean),
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
     new ESLintWebpackPlugin({
+      extensions: [".js", ".jsx"],
       context: path.resolve(__dirname, "../src"),
       exclude: "node_modules",
       cache: true,
@@ -546,39 +524,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "../public"),
-          to: path.resolve(__dirname, "../dist"),
-          toType: "dir",
-          noErrorOnMissing: true,
-          globOptions: {
-            ignore: ["**/index.html"],
-          },
-          info: {
-            minimized: true,
-          },
-        },
-      ],
-    }),
     isProduction &&
       new MiniCssExtractPlugin({
         filename: "static/css/[name].[contenthash:10].css",
         chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
       }),
-    new VueLoaderPlugin(),
-    new DefinePlugin({
-      __VUE_OPTIONS_API__: "true",
-      __VUE_PROD_DEVTOOLS__: "false",
-    }),
+    !isProduction && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
   optimization: {
     minimize: isProduction,
     // 压缩的操作
     minimizer: [
+      // 压缩css
       new CssMinimizerPlugin(),
+      // 压缩js
       new TerserWebpackPlugin(),
+      // 压缩图片
       new ImageMinimizerPlugin({
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminGenerate,
@@ -607,15 +568,17 @@ module.exports = {
         },
       }),
     ],
+    // 代码分割配置
     splitChunks: {
       chunks: "all",
+      // 其他都用默认值
     },
     runtimeChunk: {
       name: (entrypoint) => `runtime~${entrypoint.name}`,
     },
   },
   resolve: {
-    extensions: [".vue", ".js", ".json"],
+    extensions: [".jsx", ".js", ".json"],
   },
   devServer: {
     open: true,
@@ -623,51 +586,107 @@ module.exports = {
     port: 3000,
     hot: true,
     compress: true,
-    historyApiFallback: true, // 解决vue-router刷新404问题
+    historyApiFallback: true,
   },
   mode: isProduction ? "production" : "development",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
 };
 ```
 
+- 修改运行指令 package.json
+
+```json{8-9}
+{
+  "name": "react-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "babel-loader": "^8.2.5",
+    "babel-preset-react-app": "^10.0.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.2.3",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "less-loader": "^10.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "react-refresh": "^0.13.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "stylus-loader": "^6.2.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "browserslist": ["last 2 version", "> 1%", "not dead"]
+}
+```
+
 ## 优化配置
 
-```js{11-13,29-38,151-161,199-229,237-240,252}
+```js{27-42,189-219,238}
 const path = require("path");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const { DefinePlugin } = require("webpack");
-const AutoImport = require("unplugin-auto-import/webpack");
-const Components = require("unplugin-vue-components/webpack");
-const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
-// 需要通过 cross-env 定义环境变量
+
 const isProduction = process.env.NODE_ENV === "production";
 
 const getStyleLoaders = (preProcessor) => {
   return [
-    isProduction ? MiniCssExtractPlugin.loader : "vue-style-loader",
+    isProduction ? MiniCssExtractPlugin.loader : "style-loader",
     "css-loader",
     {
       loader: "postcss-loader",
       options: {
         postcssOptions: {
-          plugins: ["postcss-preset-env"],
+          plugins: [
+            "postcss-preset-env",
+          ],
         },
       },
     },
     preProcessor && {
       loader: preProcessor,
       options:
-        preProcessor === "sass-loader"
+        preProcessor === "less-loader"
           ? {
-              // 自定义主题：自动引入我们定义的scss文件
-              additionalData: `@use "@/styles/element/index.scss" as *;`,
+              // antd的自定义主题
+              lessOptions: {
+                modifyVars: {
+                  // 其他主题色：https://ant.design/docs/react/customize-theme-cn
+                  "@primary-color": "#1DA57A", // 全局主色
+                },
+                javascriptEnabled: true,
+              },
             }
           : {},
     },
@@ -690,62 +709,56 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: getStyleLoaders(),
-      },
-      {
-        test: /\.less$/,
-        use: getStyleLoaders("less-loader"),
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: getStyleLoaders("sass-loader"),
-      },
-      {
-        test: /\.styl$/,
-        use: getStyleLoaders("stylus-loader"),
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024,
+        oneOf: [
+          {
+            test: /\.css$/,
+            use: getStyleLoaders(),
           },
-        },
-      },
-      {
-        test: /\.(ttf|woff2?)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(jsx|js)$/,
-        include: path.resolve(__dirname, "../src"),
-        loader: "babel-loader",
-        options: {
-          cacheDirectory: true,
-          cacheCompression: false,
-          plugins: [
-            // "@babel/plugin-transform-runtime" // presets中包含了
-          ],
-        },
-      },
-      // vue-loader不支持oneOf
-      {
-        test: /\.vue$/,
-        loader: "vue-loader", // 内部会给vue文件注入HMR功能代码
-        options: {
-          // 开启缓存
-          cacheDirectory: path.resolve(
-            __dirname,
-            "node_modules/.cache/vue-loader"
-          ),
-        },
+          {
+            test: /\.less$/,
+            use: getStyleLoaders("less-loader"),
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: getStyleLoaders("sass-loader"),
+          },
+          {
+            test: /\.styl$/,
+            use: getStyleLoaders("stylus-loader"),
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)$/,
+            type: "asset",
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10 * 1024,
+              },
+            },
+          },
+          {
+            test: /\.(ttf|woff2?)$/,
+            type: "asset/resource",
+          },
+          {
+            test: /\.(jsx|js)$/,
+            include: path.resolve(__dirname, "../src"),
+            loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+              cacheCompression: false,
+              plugins: [
+                // "@babel/plugin-transform-runtime",  // presets中包含了
+                !isProduction && "react-refresh/babel",
+              ].filter(Boolean),
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
     new ESLintWebpackPlugin({
+      extensions: [".js", ".jsx"],
       context: path.resolve(__dirname, "../src"),
       exclude: "node_modules",
       cache: true,
@@ -757,41 +770,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
+    isProduction &&
+      new MiniCssExtractPlugin({
+        filename: "static/css/[name].[contenthash:10].css",
+        chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
+      }),
+    !isProduction && new ReactRefreshWebpackPlugin(),
+    // 将public下面的资源复制到dist目录去（除了index.html）
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "../public"),
           to: path.resolve(__dirname, "../dist"),
           toType: "dir",
-          noErrorOnMissing: true,
+          noErrorOnMissing: true, // 不生成错误
           globOptions: {
+            // 忽略文件
             ignore: ["**/index.html"],
           },
           info: {
+            // 跳过terser压缩js
             minimized: true,
           },
         },
-      ],
-    }),
-    isProduction &&
-      new MiniCssExtractPlugin({
-        filename: "static/css/[name].[contenthash:10].css",
-        chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
-      }),
-    new VueLoaderPlugin(),
-    new DefinePlugin({
-      __VUE_OPTIONS_API__: "true",
-      __VUE_PROD_DEVTOOLS__: "false",
-    }),
-    // 按需加载element-plus组件样式
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [
-        ElementPlusResolver({
-          importStyle: "sass", // 自定义主题
-        }),
       ],
     }),
   ].filter(Boolean),
@@ -799,8 +800,11 @@ module.exports = {
     minimize: isProduction,
     // 压缩的操作
     minimizer: [
+      // 压缩css
       new CssMinimizerPlugin(),
+      // 压缩js
       new TerserWebpackPlugin(),
+      // 压缩图片
       new ImageMinimizerPlugin({
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminGenerate,
@@ -829,6 +833,7 @@ module.exports = {
         },
       }),
     ],
+    // 代码分割配置
     splitChunks: {
       chunks: "all",
       cacheGroups: {
@@ -840,18 +845,18 @@ module.exports = {
           test: path.resolve(__dirname, "../src/layouts"),
           priority: 40,
         },
-        // 如果项目中使用element-plus，此时将所有node_modules打包在一起，那么打包输出文件会比较大。
+        // 如果项目中使用antd，此时将所有node_modules打包在一起，那么打包输出文件会比较大。
         // 所以我们将node_modules中比较大的模块单独打包，从而并行加载速度更好
         // 如果项目中没有，请删除
-        elementUI: {
-          name: "chunk-elementPlus",
-          test: /[\\/]node_modules[\\/]_?element-plus(.*)/,
+        antd: {
+          name: "chunk-antd",
+          test: /[\\/]node_modules[\\/]antd(.*)/,
           priority: 30,
         },
-        // 将vue相关的库单独打包，减少node_modules的chunk体积。
-        vue: {
-          name: "vue",
-          test: /[\\/]node_modules[\\/]vue(.*)[\\/]/,
+        // 将react相关的库单独打包，减少node_modules的chunk体积。
+        react: {
+          name: "react",
+          test: /[\\/]node_modules[\\/]react(.*)?[\\/]/,
           chunks: "initial",
           priority: 20,
         },
@@ -868,11 +873,7 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: [".vue", ".js", ".json"],
-    alias: {
-      // 路径别名
-      "@": path.resolve(__dirname, "../src"),
-    },
+    extensions: [".jsx", ".js", ".json"],
   },
   devServer: {
     open: true,
@@ -880,10 +881,10 @@ module.exports = {
     port: 3000,
     hot: true,
     compress: true,
-    historyApiFallback: true, // 解决vue-router刷新404问题
+    historyApiFallback: true,
   },
   mode: isProduction ? "production" : "development",
   devtool: isProduction ? "source-map" : "cheap-module-source-map",
-  performance: false,
+  performance: false, // 关闭性能分析，提示速度
 };
 ```
