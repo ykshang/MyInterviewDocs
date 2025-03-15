@@ -96,9 +96,20 @@ const AlgorithmNote = defineNoteConfig({
   link: '/Algorithm',
   sidebar: 'auto',
 })
-
+// Security 笔记配置
+const SecurityNote = defineNoteConfig({
+  dir: 'Security',
+  link: '/Security',
+  sidebar: 'auto',
+})
+// Network 笔记配置
+const NetworkNote = defineNoteConfig({
+  dir: 'Network',
+  link: '/Network',
+  sidebar: 'auto',
+})
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote],
 })
