@@ -114,8 +114,28 @@ const WebBasicNote = defineNoteConfig({
   link: '/WebBasic',
   sidebar: 'auto',
 })
+// Browser 笔记配置
+const BrowserNote = defineNoteConfig({
+  dir: 'Browser',
+  link: '/Browser',
+  sidebar: 'auto',
+})
+
+// Grunt 笔记配置
+const GruntNote = defineNoteConfig({
+  dir: 'Grunt',
+  link: '/Grunt',
+  sidebar: 'auto',
+})
+// Gulp 笔记配置
+const GulpNote = defineNoteConfig({
+  dir: 'Gulp',
+  link: '/Gulp',
+  sidebar: 'auto',
+})
+
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote, WebBasicNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote, WebBasicNote, BrowserNote],
 })
