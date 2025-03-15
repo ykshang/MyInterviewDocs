@@ -30,7 +30,7 @@ export const navbar = defineNavbarConfig([
       {
         text: '轻应用框架',
         items: [
-          { text: 'Node.Js', link: '/notes/NodeJs/' },
+          { text: 'Node.js', link: '/notes/NodeJs/' },
           { text: 'Express', link: '/notes/Express/' },
           { text: 'Koa', link: '/notes/Koa/' },
         ]
