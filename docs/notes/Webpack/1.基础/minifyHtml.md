@@ -1,0 +1,10 @@
+---
+title: minifyHtml
+createTime: 2025/03/15 14:14:03
+permalink: /Webpack/gywmdiia/
+---
+# html 压缩
+
+默认生产模式已经开启了：html 压缩和 js 压缩
+
+不需要额外进行配置
