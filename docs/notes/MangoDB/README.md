@@ -1,5 +1,6 @@
 ---
-title: MangoDB
+title: MongoDB
 createTime: 2025/03/15 12:37:11
-permalink: /MangoDB/
+permalink: /MongoDB/
 ---
+11
