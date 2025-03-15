@@ -52,6 +52,8 @@ export const navbar = defineNavbarConfig([
     items: [
       { text: '算法', link: '/notes/Algorithm/' },
       { text: '设计模式', link: '/notes/DesignPattern/' },
+      { text: '网络相关', link: '/notes/DesignPattern/' },
+      { text: '信息安全', link: '/notes/DesignPattern/' },
     ]
   },
 ])
