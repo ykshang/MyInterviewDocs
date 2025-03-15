@@ -13,7 +13,7 @@ export const navbar = defineNavbarConfig([
         { text: 'Html', link: '/notes/Html/' },
         { text: 'CSS', link: '/notes/CSS/' },
         { text: 'Javascript', link: '/notes/Javascript/' },
-        { text: 'Web基础', link: '/notes/WebBasic/' },
+        { text: 'Web 基础知识', link: '/notes/WebBasic/' },
       ]
     }, {
       text: '主流框架',
