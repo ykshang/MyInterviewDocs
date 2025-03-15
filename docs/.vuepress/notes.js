@@ -1,13 +1,13 @@
 import { defineNoteConfig, defineNotesConfig } from 'vuepress-theme-plume'
 
 // HTML 笔记配置
-const htmlNote = defineNoteConfig({
+const HtmlNote = defineNoteConfig({
   dir: 'Html',
   link: '/Html',
   sidebar: 'auto',
 })
 // CSS 笔记配置
-const cssNote = defineNoteConfig({
+const CssNote = defineNoteConfig({
   dir: 'CSS',
   link: '/CSS',
   sidebar: 'auto',
@@ -133,9 +133,36 @@ const GulpNote = defineNoteConfig({
   link: '/Gulp',
   sidebar: 'auto',
 })
+// MongoDB 笔记配置
+const MongoDBNote = defineNoteConfig({
+  dir: 'MongoDB',
+  link: '/MongoDB',
+  sidebar: 'auto',
+})
 
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote, WebBasicNote, BrowserNote],
+  notes: [
+    AlgorithmNote,
+    AngularNote,
+    BabelNote,
+    BrowserNote,
+    CssNote,
+    DesignPatternNote,
+    ExpressNote,
+    GitNote,
+    HtmlNote,
+    JavaScriptNote,
+    KoaNote,
+    NodeJsNote,
+    NetworkNote,
+    ReactNote,
+    SecurityNote,
+    UniAppNote,
+    ViteNote,
+    VueNote,
+    WebBasicNote,
+    WebpackNote,
+  ],
 })
