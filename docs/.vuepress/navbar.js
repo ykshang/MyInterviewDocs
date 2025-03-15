@@ -23,13 +23,23 @@ export const navbar = defineNavbarConfig([
         { text: 'Angular', link: '/notes/Angular/' },
         { text: 'UniApp', link: '/notes/UniApp/' },
       ]
-    }, {
-      text: '进阶',
-      items: [
-        { text: 'Express', link: '/notes/Express/' },
-        { text: 'Koa', link: '/notes/Koa/' },
-      ]
     }]
+  }, {
+    text: '前端进阶',
+    items: [
+      {
+        text: '轻应用框架',
+        items: [
+          { text: 'Express', link: '/notes/Express/' },
+          { text: 'Koa', link: '/notes/Koa/' },
+        ]
+      }, {
+        text: '数据库',
+        items: [
+          { text: 'MongoDB', link: '/notes/MongoDB/' },
+        ]
+      },
+    ]
   }, {
     text: '工程化',
     items: [
