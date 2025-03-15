@@ -15,11 +15,12 @@ export const navbar = defineNavbarConfig([
         { text: 'Javascript', link: '/notes/Javascript/' },
       ]
     }, {
-      text: '三大框架',
+      text: '主流框架',
       items: [
         { text: 'Vue', link: '/notes/Vue/' },
         { text: 'React', link: '/notes/React/' },
         { text: 'Angular', link: '/notes/Angular/' },
+        { text: 'UniApp', link: '/notes/UniApp/' },
       ]
     }, {
       text: '进阶',
@@ -33,6 +34,7 @@ export const navbar = defineNavbarConfig([
     items: [
       { text: 'Webpack', link: '/blog/' },
       { text: 'Babel', link: '/blog/' },
+      { text: 'Vite', link: '/notes/Vite/' },
       { text: 'Gulp', link: '/blog/' },
       { text: 'Grunt', link: '/blog/' },
     ]
