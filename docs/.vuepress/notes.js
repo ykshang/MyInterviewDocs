@@ -114,12 +114,6 @@ const WebBasicNote = defineNoteConfig({
   link: '/WebBasic',
   sidebar: 'auto',
 })
-// Browser 笔记配置
-const BrowserNote = defineNoteConfig({
-  dir: 'Browser',
-  link: '/Browser',
-  sidebar: 'auto',
-})
 
 // Grunt 笔记配置
 const GruntNote = defineNoteConfig({
@@ -147,14 +141,16 @@ export const notes = defineNotesConfig({
     AlgorithmNote,
     AngularNote,
     BabelNote,
-    BrowserNote,
     CssNote,
     DesignPatternNote,
     ExpressNote,
     GitNote,
+    GulpNote,
+    GruntNote,
     HtmlNote,
     JavaScriptNote,
     KoaNote,
+    MongoDBNote,
     NodeJsNote,
     NetworkNote,
     ReactNote,

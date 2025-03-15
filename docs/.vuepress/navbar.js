@@ -14,7 +14,6 @@ export const navbar = defineNavbarConfig([
         { text: 'CSS', link: '/notes/CSS/' },
         { text: 'Javascript', link: '/notes/Javascript/' },
         { text: 'Web基础', link: '/notes/WebBasic/' },
-        { text: '浏览器相关', link: '/notes/Browser/' },
       ]
     }, {
       text: '主流框架',
