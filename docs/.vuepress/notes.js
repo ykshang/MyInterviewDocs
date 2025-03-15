@@ -108,8 +108,14 @@ const NetworkNote = defineNoteConfig({
   link: '/Network',
   sidebar: 'auto',
 })
+// WebBasic 笔记配置
+const WebBasicNote = defineNoteConfig({
+  dir: 'WebBasic',
+  link: '/WebBasic',
+  sidebar: 'auto',
+})
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote],
+  notes: [htmlNote, cssNote, JavaScriptNote, KoaNote, ExpressNote, GitNote, VueNote, ReactNote, AngularNote, ViteNote, BabelNote, NodeJsNote, UniAppNote, WebpackNote, DesignPatternNote, AlgorithmNote, SecurityNote, NetworkNote, WebBasicNote],
 })
